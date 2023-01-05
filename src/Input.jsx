@@ -16,6 +16,8 @@ const defList = [
 ];
 
 export default function Input({
+  isZoom,
+  setIsZoom,
   isSprin,
   isInputOpen,
   setIsInputOpen,
@@ -61,6 +63,17 @@ export default function Input({
 
   return (
     <>
+      <button
+        className="absolute right-[149px] top-0 w-fit text-center bg-black/70 rounded-b-lg px-4 py-2 z-10 flex items-center"
+        onClick={() => setIsZoom((z) => !z)}
+      >
+        <input
+          className="pointer-events-none mr-2"
+          type="checkbox"
+          checked={isZoom}
+        />
+        <div className="mb-0.5">แสดงผลแบบซูม</div>
+      </button>
       <button
         className="absolute right-0 top-0 w-20 text-center bg-black/70 rounded-bl-lg px-4 py-2 z-10"
         onClick={() => setIsInputOpen((s) => !s)}
